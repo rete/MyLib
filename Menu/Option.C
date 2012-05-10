@@ -74,11 +74,6 @@ void Option::setOptionArgument(string arg)
 	optionArg = arg ;
 }
 
-void Option::setUsageLine(string usage)
-{
-	usageLine = usage ;
-}
-
 /*
  * All getters
  */

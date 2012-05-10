@@ -43,7 +43,6 @@ public :
 	std::string getOptionArgument() ;
 
 	// Setters
-	void setUsageLine(std::string usage) ;
 	void setOptionArgument(std::string arg) ;
 	void setGiven(bool b) ;
 
