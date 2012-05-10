@@ -19,26 +19,13 @@ using namespace std ;
 Menu::Menu()
 {
 	/*
-	 * Build all options needed for the menu.
+	 * Set all attributes to empty.
 	 */
 	executable = "" ;
 	exampleLine = "" ;
 	emailAdress = "" ;
 	srcAdress = "" ;
-
-	Option graphic("g","graphic","begin in graphic mode") ;
-	Option execute("x","execute","execute analysis with configuration file") ;
-	Option configuration("f","config","load a configuration file") ;
-	Option help("h","help","display help menu") ;
-	Option display("d","display","activate the analysis display") ;
-
-	optionList.push_back(graphic) ;
-	optionList.push_back(execute) ;
-	optionList.push_back(configuration) ;
-	optionList.push_back(help) ;
-	optionList.push_back(display) ;
 }
-
 
 Menu::~Menu()
 {
