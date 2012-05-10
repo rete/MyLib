@@ -1,15 +1,14 @@
 /*
  *
- * //Ising Model Project part of M1 computing project
+ * //My libraries for C++ usage
  * Copyright (c) 2012 Rémi Eté
  * All Right Reserved.
  *
- * Use and copying of this software and preparation of derivative works
- * based upon this software are permitted. Any copy of this software or
- * of any derivative work must include this paragraph.
+ * Use and copying of these libraries and preparation of derivative works
+ * based upon these libraries are permitted. Any copy of these libraries
+ * must include this copyright notice.
  *
  * Written by : R. Eté
- *
  */
 
 #ifndef DATA_H
