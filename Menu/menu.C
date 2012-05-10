@@ -21,17 +21,16 @@ Menu::Menu()
 	/*
 	 * Build all options needed for the menu.
 	 */
+	executable = "" ;
+	exampleLine = "" ;
+	emailAdress = "" ;
+	srcAdress = "" ;
+
 	Option graphic("g","graphic","begin in graphic mode") ;
 	Option execute("x","execute","execute analysis with configuration file") ;
 	Option configuration("f","config","load a configuration file") ;
 	Option help("h","help","display help menu") ;
 	Option display("d","display","activate the analysis display") ;
-
-	graphic.setUsageLine       ("   -g,  --graphic                    Start with graphic mode. THREAD PROBLEMS! DON'T USE IT!") ;
-	help.setUsageLine          ("   -h   --help                       Display help message and quit") ;
-	configuration.setUsageLine ("   -f   --config=CFG                 Set CFG file as configuration file. Format is .isi") ;
-	execute.setUsageLine       ("   -x   --execute                    Execute analysis with configuration file") ;
-	display.setUsageLine       ("   -d   --display                    Activate the analysis display") ;
 
 	optionList.push_back(graphic) ;
 	optionList.push_back(execute) ;
@@ -46,6 +45,12 @@ Menu::~Menu()
 	/*
 	 * Default destructor
 	 */
+}
+
+void Menu::addOption(string sh, string lg, string des)
+{
+	Option newOption(sh, lg, des) ;
+	optionList.push_back(newOption) ;
 }
 
 Option Menu::getOptionWithShortOption(std::string shOpt)
@@ -81,14 +86,34 @@ void Menu::Usage()
 	 */
 
 	list<Option>::iterator it ;
-	cout << "Usage: IsingModel <OPTION>" << endl ;
-	cout << "Exemple : \"IsingModel -g\" to start with graphic mode" << endl ;
+	if(executable!="") cout << "Usage: " << executable << " <OPTION>" << endl ;
+	if(exampleLine!="") cout << "Example : " << exampleLine << endl ;
 	cout << "Options :" << endl ;
 	for(it = optionList.begin() ; it != optionList.end() ; it++)
 		(*it).printUsageLine() ;
-	cout << "Report bug to remi.ete@gmail.com" << endl ;
-	cout << "Source code can be downloaded on github : <https://github.com/rete/IsingModel>" << endl ;
+	if(emailAdress!="") cout << "Report bug to " << emailAdress << endl ;
+	if(srcAdress!="") cout << "Source code can be downloaded on : <"<<srcAdress<<">" <<endl ;
 
+}
+
+void Menu::setExecutable(std::string exec)
+{
+	executable = exec ;
+}
+
+void Menu::setExampleLine(std::string ex)
+{
+	exampleLine = ex ;
+}
+
+void Menu::setEmailAdress(std::string email)
+{
+	emailAdress = email ;
+}
+
+void Menu::setSourceCodeAdress(std::string src)
+{
+	srcAdress = src ;
 }
 
 int Menu::CommandAnalysis(int argc, char * argv[])
