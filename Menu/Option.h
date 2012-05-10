@@ -27,7 +27,6 @@ protected :
 	std::string shortOption ;
 	std::string longOption ;
 	std::string description ;
-	std::string usageLine ;
 	std::string optionArg ;
 	bool given ;
 
