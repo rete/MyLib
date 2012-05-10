@@ -56,7 +56,6 @@ Option::Option(Option const &opt)
 	shortOption = opt.shortOption ;
 	longOption = opt.longOption ;
 	description = opt.description ;
-	usageLine = opt.usageLine ;
 	optionArg = opt.optionArg ;
 	given = opt.given ;
 }
@@ -103,5 +102,5 @@ bool Option::isGiven()
 
 void Option::printUsageLine()
 {
-	cout << usageLine << endl ;
+	cout << description << endl ;
 }
