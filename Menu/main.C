@@ -22,12 +22,13 @@ using namespace std ;
 int main(int argc, char * argv[])
 {
 
-Menu menu ;
-menu.setExecutable("SoftTest") ;
-menu.setExampleLine("'SoftTest -xyz' will start the program") ;
-menu.setEmailAdress("remi.ete@gmail.com") ;
-menu.setSourceCodeAdress("https://github.com/rete/IsingModel") ;
-menu.Usage() ;
+	Menu menu ;
+	menu.addOption("x","execute","Execute the program") ;
+	menu.setExecutable("SoftTest") ;
+	menu.setExampleLine("'SoftTest -xyz' will start the program") ;
+	menu.setEmailAdress("remi.ete@gmail.com") ;
+	menu.setSourceCodeAdress("https://github.com/rete/SoftTest") ;
+	menu.Usage() ;
 
 	return 0 ;
 }
