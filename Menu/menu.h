@@ -27,13 +27,17 @@ class Menu
 	 * Menu class.
 	 * Manage the command line arguments of the program.
 	 * All parameters are stored in Option type object.
-	 * Short options are one-letter arguments like 'n' or 'j'.
+	 * Short options are one-letter arguments like 'n' or 'b'.
 	 * Long options are many-letters arguments like 'size' or 'bibou'.
 	 */
 protected :
 	std::list <Option> optionList ;
 	void fillOptionArgument(std::string opt, std::string arg) ;
 	void setOptionGiven(std::string opt, bool b) ;
+	std::string executable ;
+	std::string exampleLine ;
+	std::string emailAdress ;
+	std::string srcAdress ;
 
 public:
 	Menu() ;
@@ -44,6 +48,11 @@ public:
 	bool optionSet(std::string opt) ;
 	Option getOptionWithShortOption(std::string shOpt) ;
 	Option getOptionWithLongOption(std::string longOpt) ;
+	void addOption(std::string sh, std::string lg, std::string des) ;
+	void setExecutable(std::string exec) ;
+	void setExampleLine(std::string ex) ;
+	void setEmailAdress(std::string email) ;
+	void setSourceCodeAdress(std::string src) ;
 };
 
 #endif //MENU_H
