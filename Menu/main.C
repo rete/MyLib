@@ -23,11 +23,28 @@ int main(int argc, char * argv[])
 {
 
 	Menu menu ;
-	menu.addOption("x","execute","Execute the program") ;
+
+	// OptionLayout
+	OptionLayout fileLayout("File Options") ;
+	fileLayout.addOption("x","execute","Execute the program") ;
+	fileLayout.addOption("f","file","Set input file") ;
+	fileLayout.addOption("c","configuration","Set configuration file") ;
+
+	OptionLayout analysisLayout("Analysis Options") ;
+	analysisLayout.addOption("s","size","Set the size of the system") ;
+	analysisLayout.addOption("p","params","Display all analysis params") ;
+
+	// Options
+	menu.addLayout(fileLayout) ;
+	menu.addLayout(analysisLayout) ;
+
+	// All other things that can be set
 	menu.setExecutable("SoftTest") ;
 	menu.setExampleLine("'SoftTest -xyz' will start the program") ;
 	menu.setEmailAdress("remi.ete@gmail.com") ;
 	menu.setSourceCodeAdress("https://github.com/rete/SoftTest") ;
+
+	// Display all
 	menu.Usage() ;
 
 	return 0 ;
