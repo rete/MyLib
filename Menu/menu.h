@@ -20,6 +20,7 @@
 #include <string>
 #include <cstdlib>
 #include "Option.h"
+#include "OptionLayout.h"
 
 class Menu
 {
@@ -32,6 +33,7 @@ class Menu
 	 */
 protected :
 	std::list <Option> optionList ;
+	std::list <OptionLayout> layoutList ;
 	void fillOptionArgument(std::string opt, std::string arg) ;
 	void setOptionGiven(std::string opt, bool b) ;
 	std::string executable ;
@@ -49,6 +51,7 @@ public:
 	Option getOptionWithShortOption(std::string shOpt) ;
 	Option getOptionWithLongOption(std::string longOpt) ;
 	void addOption(std::string sh, std::string lg, std::string des) ;
+	void addLayout(OptionLayout layout) ;
 	void setExecutable(std::string exec) ;
 	void setExampleLine(std::string ex) ;
 	void setEmailAdress(std::string email) ;
