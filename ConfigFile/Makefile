@@ -25,9 +25,9 @@ RM             = rm
 TARGET         = libCfgParser.so.1.0
 SONAME         = libCfgParser.so.1
 
-SRC            = CfgParser.C \
-				Data.C
-HEADERS        = $(SRC:.C=.h)
+SRC            = CFGPARSER/CfgParser.C \
+				DATA/Data.C 
+HEADERS        = $(SRC:.C=.h) EXCEPTIONS/CfgParserException.h
 OBJ            = $(SRC:.C=.o)
 
 ##### Generic rules :
@@ -43,7 +43,7 @@ $(TARGET)      : $(OBJ)
 ##### Cleaner :
 
 clean          : 
-	$(RM) *.o
+	$(RM) $(OBJ)
 
 mrproper       : clean
 	$(RM) $(EXEC)
