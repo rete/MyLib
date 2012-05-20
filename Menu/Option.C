@@ -91,6 +91,11 @@ string Option::getOptionArgument()
 	return optionArg ;
 }
 
+std::string Option::getDescription()
+{
+	return description ;
+}
+
 /*
  * Other methods
  */

@@ -40,6 +40,7 @@ public :
 	std::string getShortOption() ;
 	std::string getLongOption() ;
 	std::string getOptionArgument() ;
+	std::string getDescription() ;
 
 	// Setters
 	void setOptionArgument(std::string arg) ;
