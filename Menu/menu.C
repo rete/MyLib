@@ -13,6 +13,7 @@
 
 #include "menu.h"
 
+
 using namespace std ;
 
 
@@ -38,6 +39,11 @@ void Menu::addOption(string sh, string lg, string des)
 {
 	Option newOption(sh, lg, des) ;
 	optionList.push_back(newOption) ;
+}
+
+void Menu::addLayout(OptionLayout layout)
+{
+	layoutList.push_back(layout) ;
 }
 
 Option Menu::getOptionWithShortOption(std::string shOpt)
@@ -72,12 +78,13 @@ void Menu::Usage()
 	 * Display command usage
 	 */
 
-	list<Option>::iterator it ;
-	if(executable!="") cout << "Usage: " << executable << " <OPTION>" << endl ;
+	list<OptionLayout>::iterator it ;
+	if(executable!="") cout << "Usage : " << executable << " <OPTION>" << endl ;
 	if(exampleLine!="") cout << "Example : " << exampleLine << endl ;
-	cout << "Options :" << endl ;
-	for(it = optionList.begin() ; it != optionList.end() ; it++)
-		(*it).printUsageLine() ;
+
+	for(it = layoutList.begin() ; it != layoutList.end() ; it++)
+		if((*it).listSize()!=0) (*it).printOptions() ;
+
 	if(emailAdress!="") cout << "Report bug to " << emailAdress << endl ;
 	if(srcAdress!="") cout << "Source code can be downloaded on : <"<<srcAdress<<">" <<endl ;
 
