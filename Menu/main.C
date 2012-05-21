@@ -13,9 +13,10 @@
 
 #include <iostream>
 #include <string>
-#include "menu.h"
-#include "Option.h"
-#include "OptionLayout.h"
+#include <cassert>
+#include "MENU/menu.h"
+#include "MENU/Option.h"
+#include "MENU/OptionLayout.h"
 
 using namespace std ;
 
@@ -47,5 +48,6 @@ int main(int argc, char * argv[])
 	// Display all
 	menu.Usage() ;
 
+	assert(1==0) ;
 	return 0 ;
 }
