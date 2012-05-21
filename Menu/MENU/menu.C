@@ -124,6 +124,9 @@ int Menu::CommandAnalysis(int argc, char * argv[])
 		if (*cmd == '-')  // It's an option
 		{
 			cmd++ ;
+
+/****************************************************************/
+
 			if (*cmd == '-')  // It's a word option
 			{
 				cmd++ ;
@@ -157,6 +160,9 @@ int Menu::CommandAnalysis(int argc, char * argv[])
 					return 1 ;
 				}
 			}
+
+/*********************************************************/
+
 			else
 			{
 				while ((c=*cmd++)!=0)	//else it's a character option

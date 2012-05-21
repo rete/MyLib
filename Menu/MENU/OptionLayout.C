@@ -22,7 +22,7 @@ OptionLayout::OptionLayout(string t)
 
 OptionLayout::~OptionLayout()
 {
-
+	// Default Destructor
 }
 
 int OptionLayout::listSize()
@@ -34,6 +34,7 @@ void OptionLayout::addOption(Option opt)
 {
 	optionList.push_back(opt) ;
 }
+
 
 void OptionLayout::addOption(string sh, string lg, string des)
 {

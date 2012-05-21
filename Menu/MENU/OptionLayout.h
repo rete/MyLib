@@ -17,6 +17,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <cstdlib>
 #include "Option.h"
 
 class OptionLayout
