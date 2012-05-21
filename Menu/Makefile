@@ -3,18 +3,20 @@
 ##### Creation date : Sun May 20 18:59:11 2012
 ##### CopyRight R. Eté
 ##### Menu Library for Personnal Usage
+##### Author : R. Eté
 ################################################
 
 
 ##### Variables :
 
 CC             = g++
+#ASSERTFLAG     = -DNDEBUG
 CXXFLAGS       = -Wall -W -pedantic -Wunused-value -Woverloaded-virtual \
 		-Wshadow -Wfloat-equal -O2 -Wold-style-cast -Wpointer-arith \
- 		-Wcast-align
+ 		-Wcast-align $(ASSERTFLAG)
 LDFLAGS        = -Wall -W -pedantic -Wunused-value -Woverloaded-virtual \
  		-Wshadow -Wfloat-equal -O2 -Wold-style-cast -Wpointer-arith \
- 		-Wcast-align
+ 		-Wcast-align $(ASSERTFLAG)
 RM             = rm
 
 
@@ -22,11 +24,11 @@ RM             = rm
 
 TARGET         = libMenu.so.1.0
 SONAME         = libMenu.so.1
-SRC            = menu.C \
-		Option.C \
-		OptionLayout.C
+SRC            = MENU/menu.C \
+		MENU/Option.C \
+		MENU/OptionLayout.C
 
-HEADERS        = $(SRC:.C=.h)
+HEADERS        = $(SRC:.C=.h) EXCEPTION/AbstractMenuException.h
 OBJ            = $(SRC:.C=.o)
 
 
@@ -35,15 +37,16 @@ OBJ            = $(SRC:.C=.o)
 all            : $(TARGET)
 
 $(TARGET)      : $(OBJ)
-	$(CC) -fPIC -shared -o $@ $^ -Wl,-soname,$(SONAME) $(LDFLAGS)
+	$(CC) -fPIC -shared -o $@ $^ $(LDFLAGS) -Wl,-soname,$(SONAME)
 
 %.o            : %.C %.h
 	$(CC) -fPIC -o $@ -c  $< $(CXXFLAGS)
 
+
 ##### Cleaner :
 
 clean          : 
-	$(RM) *.o
+	$(RM) $(OBJ)
 
 mrproper       : clean
 	$(RM) $(TARGET)
