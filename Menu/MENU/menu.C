@@ -152,7 +152,7 @@ int Menu::CommandAnalysis(int argc, char * argv[])
 						arg.push_back(c) ;
 					}
 					fillOptionArgument("f",arg) ;
-					setOptionGiven("execute",true) ;
+					setOptionGiven("config",true) ;
 				}
 				else
 				{
@@ -191,6 +191,9 @@ int Menu::CommandAnalysis(int argc, char * argv[])
 					} // switch
 				} // while
 			} // else
+
+/***************************************************************************************/
+
 		} // if for option
 	} // for
 
