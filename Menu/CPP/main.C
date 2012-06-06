@@ -48,6 +48,6 @@ int main(int argc, char * argv[])
 	// Display all
 	menu.Usage() ;
 
-	assert(1==0) ;
+
 	return 0 ;
 }
