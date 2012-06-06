@@ -48,7 +48,6 @@ public :
 
 	// Other methods
 	bool isGiven() ;
-	void printUsageLine() ;
 };
 
 #endif  // OPTION_H

@@ -104,8 +104,3 @@ bool Option::isGiven()
 	if(given) return true ;
 	return false ;
 }
-
-void Option::printUsageLine()
-{
-	cout << description << endl ;
-}

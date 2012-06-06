@@ -22,7 +22,7 @@
 
 class OptionLayout
 {
-private :
+protected :
 	std::list<Option> optionList ;
 	std::string title ;
 	int getMaximumOptionLength() ;

@@ -46,7 +46,8 @@ public:
 	~Menu() ;
 	void Usage() ;
 	std::string getOption(std::string opt) ;
-	int CommandAnalysis(int argc, char *argv[]) ;
+	int analyzeOption(char * arg) ;
+	int commandAnalysis(int argc, char *argv[]) ;
 	bool optionSet(std::string opt) ;
 	Option getOptionWithShortOption(std::string shOpt) ;
 	Option getOptionWithLongOption(std::string longOpt) ;

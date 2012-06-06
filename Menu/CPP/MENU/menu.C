@@ -110,12 +110,50 @@ void Menu::setSourceCodeAdress(std::string src)
 	srcAdress = src ;
 }
 
-int Menu::CommandAnalysis(int argc, char * argv[])
+int Menu::analyzeOption(char * arg)
+{
+	char c ;
+	if (*arg == '-')  // It's a word option
+	{
+		arg++ ;
+		string word = "" ;
+		while ( ((c=*arg++)!=0) )
+		{
+			if(c=='=') break ;
+			word.push_back(c) ;
+		}
+		if (word == "help")
+		{
+			Usage() ;
+			return 0 ;
+		}
+		else if (word == "graphic") setOptionGiven("graphic",true) ;
+		else if (word == "display") setOptionGiven("display",true) ;
+		else if (word == "execute") setOptionGiven("execute",true) ;
+		else if (word == "config")
+		{
+			string argument ;
+			while ( ((c=*arg++)!=0) )
+			{
+				argument.push_back(c) ;
+			}
+			fillOptionArgument("f",argument) ;
+			setOptionGiven("config",true) ;
+			}
+		else
+		{
+			cout << "Error : argument passed \'" << word << "\' to command line does not exists!" << endl ;
+			return 1 ;
+		}
+	}
+}
+
+int Menu::commandAnalysis(int argc, char * argv[])
 {
 	/*
 	 * Analyze the command line.
 	 * Fill all Option objects with respect to argv[].
-	 * Return 0 if everthing is OK else return value is 1.
+	 * Return 0 if everything is OK else return value is 1.
 	 */
 	char c ;
 	for (int i=1 ; i<argc ; i++)
