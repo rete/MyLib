@@ -1,0 +1,12 @@
+[epydoc]
+
+name: SummerDev-Menu
+url: http://sites.google/site/summerdevelopment/documentation/pydoc-menu
+modules: /home/remi/git/MyLib/Menu/PYTHON/Menu/Option.py
+modules: /home/remi/git/MyLib/Menu/PYTHON/Menu/OptionLayout.py
+output: html
+target: doc/
+
+
+graph: all
+dotpath: /usr/local/bin/dot
