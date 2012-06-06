@@ -31,8 +31,8 @@ protected :
 public :
 	AbstractMenuException() throw() {} ;
 	virtual ~AbstractMenuException() throw() ;
-	virtual const char* what() const throw() = 0 ;
+	virtual const char* what() const throw() ;
 
-}
+};
 
 #endif  // ABSTRACTMENUEXCEPTION_H
